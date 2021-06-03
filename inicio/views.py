@@ -1,9 +1,8 @@
 from django.shortcuts import render
 from django.http import HttpResponse
 
-def myHomeView(*args, **kwars):
-  print(args, kwars)
-  return HttpResponse('<h1>Hola Mundo desde Django</h1>')
+def myHomeView(request, *args, **kwars):
+  return render(request, "home.html", {})
 
 def anotherView(request, *args, **kwars):
   print(args, kwars)
