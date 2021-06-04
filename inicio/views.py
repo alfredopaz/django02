@@ -2,7 +2,11 @@ from django.shortcuts import render
 from django.http import HttpResponse
 
 def myHomeView(request, *args, **kwars):
-  return render(request, "home.html", {})
+  myContext = {
+      'myText': 'Este es sólo un mensaje',
+      'myNumber': 123,
+      }
+  return render(request, "home.html", myContext)
 
 def anotherView(request, *args, **kwars):
   print(args, kwars)
